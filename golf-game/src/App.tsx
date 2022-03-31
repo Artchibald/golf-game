@@ -1,12 +1,12 @@
 import React from "react";
 import logo from "./logo.svg";
-import Something from "./components/something";
+import GolfGameWholeApp from "./assets/js/components/GolfGameWholeApp";
 import "./App.css";
 
 function App(): JSX.Element {
   return (
     <div className="App">
-      <Something />
+      <GolfGameWholeApp />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>

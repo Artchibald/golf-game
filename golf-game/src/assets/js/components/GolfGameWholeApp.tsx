@@ -11,35 +11,47 @@ import { StyledUpDownWrapper } from "./styles";
 // assign values based on coords.
 
 function GolfGameWholeApp() {
+  let countFirtstBtnClicks = 0;
+
   return (
     <StyledUpDownWrapper>
       <Button
         handleClick={(event) => {
           event.preventDefault();
+          countFirtstBtnClicks++;
+          console.log(countFirtstBtnClicks);
+          if (countFirtstBtnClicks === 0) {
+          }
+          if (countFirtstBtnClicks === 1) {
+          }
+          if (countFirtstBtnClicks === 2) {
+          }
+          if (countFirtstBtnClicks === 3) {
+            alert("Youre done");
+          }
           // console.log("button clicked", event);
           const animations = document.querySelectorAll("span");
           animations.forEach((animation) => {
             const running = animation.style.animationPlayState || "running";
             animation.style.animationPlayState =
-              running === "running" ? "paused" : "running";
+              running === "paused" ? "running" : "paused";
+
             if (running === "running") {
-              // THIS IS WHEN IT PAUSES
+              // alert("Paused");
+              // THIS IS WHEN IT RUNS
               const rect = animation.getBoundingClientRect() as DOMRect;
               // log position top and do stuff depending where it is
               console.log(rect.left, rect.right, rect.top, rect.bottom);
               let IsThisTheWinningShot;
               if (rect.top > 110 && rect.top < 180) {
-                console.log("you hit the winning shot!");
-                IsThisTheWinningShot = false;
-                // here we hide this module and play out anim YOU WON
+                console.log("you hit the winning ");
+                IsThisTheWinningShot = true;
               } else if (rect.top < 110) {
                 console.log("you too high");
-                IsThisTheWinningShot = true;
-                // here we hide this module and play out anim YOU TOO HIGH inc randomized
+                IsThisTheWinningShot = false;
               } else if (rect.top > 180) {
                 console.log("you too low");
                 IsThisTheWinningShot = false;
-                // here we hide this module and play out anim YOU TOO LOW inc randomized
               }
               console.log(IsThisTheWinningShot);
             }

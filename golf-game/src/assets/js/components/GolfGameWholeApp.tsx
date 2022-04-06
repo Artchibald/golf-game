@@ -4,6 +4,7 @@ import { ShootButton } from "./../components/StartShootAnimBtn/StartShootAnimBtn
 import UpDownBall from "./../components/UpDownBall/UpDownBall";
 import LeftRightBall from "./../components/LeftRightBall/LeftRightBall";
 import { StyledUpDownWrapper, StyledLeftRightWrapper } from "./styles";
+import ShotAnimation from "./ShotAnimation/ShotAnimation";
 
 function GolfGameWholeApp() {
   let countFirtstBtnClicks = 0;
@@ -52,8 +53,6 @@ function GolfGameWholeApp() {
               if (countFirtstBtnClicks === 2) {
               }
               if (countFirtstBtnClicks === 3) {
-                //alert("Youre done");
-                //hide box here
                 let verticalBox = document.getElementById(
                   "vert"
                 ) as HTMLDivElement;
@@ -142,12 +141,18 @@ function GolfGameWholeApp() {
                   "horiz"
                 ) as HTMLDivElement;
                 horizBox.style.display = "none";
+
+                let nextShotAnim = document.getElementById(
+                  "generatedShot"
+                ) as HTMLDivElement;
+                nextShotAnim.style.display = "block";
               }
             });
           }}
         />
         <LeftRightBall />
       </StyledLeftRightWrapper>
+      <ShotAnimation />
     </React.Fragment>
   );
 }

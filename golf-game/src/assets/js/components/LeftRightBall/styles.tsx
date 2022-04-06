@@ -1,0 +1,11 @@
+import styled from "styled-components";
+
+export const StyledRedLeftRightBall = styled.i`
+  background-color: green;
+  position: absolute;
+  font-size: 32px;
+  color: white;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+`;

@@ -48,9 +48,28 @@
   }
 }
 
- span {
+@keyframes leftRight {
+  from {
+    left: 0%;
+  }
+  to {
+    left: 100%;
+  }
+}
+
+
+
+#vert span {
   animation-play-state: paused;
   animation-name: upDown;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#horiz i {
+  animation-play-state: running;
+  animation-name: leftRight;
   animation-duration: 1s;
   animation-iteration-count: infinite;
   animation-direction: alternate;

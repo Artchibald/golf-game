@@ -6,3 +6,11 @@ export let StyledUpDownWrapper = styled.div`
   height: 300px;
   border: 2px solid red;
 `;
+
+export let StyledLeftRightWrapper = styled.div`
+  display: none;
+  position: relative;
+  width: 300px;
+  height: 100px;
+  border: 2px solid green;
+`;
